@@ -27,19 +27,19 @@ class Book {
 		title index:true
 	}
 }
-...
+```
 ##controller
 book controller提供rest服务。
 在UrlMapping.groovy中定义
-...groovy
+```groovy
 "/book"(resources:'book')
-...
+```
 
 另外又针对http + json请求增加了一个action：findByTitle
-...groovy
+```groovy
 	def findByTitle(Book bookInstance) {
 		
 		def books = Book.findAllByTitleLike((bookInstance.title?:'') + '%', [sort:'title',order:'desc',max:100] );
 		respond books;
 	}
-...
+```
