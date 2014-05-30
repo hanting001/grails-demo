@@ -2,7 +2,7 @@ grails-demo
 ===========
 一个简单的采用grails开发的rest apis应用。数据库采用mongodb，使用grails mongodb plugin。
 
-##demain
+##domain对象
 一个简单的book对象
 ```groovy
 class Book {
@@ -37,9 +37,8 @@ book controller提供rest服务。
 
 另外又针对http + json请求增加了一个action：findByTitle
 ```groovy
-	def findByTitle(Book bookInstance) {
-		
-		def books = Book.findAllByTitleLike((bookInstance.title?:'') + '%', [sort:'title',order:'desc',max:100] );
+	def findByTitle() {
+		def books = Book.findAllByTitleLike((request.JSON.title?:'') + '%', [sort:'title',order:'desc',max:100] );
 		respond books;
 	}
 ```
