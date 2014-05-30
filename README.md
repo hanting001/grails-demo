@@ -2,7 +2,7 @@ grails-demo
 ===========
 一个简单的采用grails开发的rest apis应用。数据库采用mongodb，使用grails mongodb plugin。
 
-##demain
+##domain对象
 一个简单的book对象
 ```groovy
 class Book {
