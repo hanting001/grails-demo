@@ -14,9 +14,9 @@ class BookController  {
 	static allowedMethods = [save: "POST", update: "PUT",  delete: "DELETE"]
 
 	/*
-	 * ¶ÔÓ¦GETÇëÇó
+	 * å¯¹åº”GETè¯·æ±‚
 	 * http://localhost:8080/apis/book?format=json
-	 * format=json±íÊ¾¸ÃÇëÇóµÄ·µ»ØÀàĞÍÏ£ÍûÊÇjson¸ñÊ½
+	 * format=jsonè¡¨ç¤ºè¯¥è¯·æ±‚çš„è¿”å›ç±»å‹å¸Œæœ›æ˜¯jsonæ ¼å¼
 	 */
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
@@ -32,13 +32,13 @@ class BookController  {
 
 
 	/*
-	 * ¶ÔÓ¦POSTÇëÇó
+	 * å¯¹åº”POSTè¯·æ±‚
 	 * http://localhost:8080/apis/book?format=json
-	 * http header£ºContent-Type = application/json
-	 * Ìá½»jsonÊı¾İÎª
+	 * http headerï¼šContent-Type = application/json
+	 * æäº¤jsonæ•°æ®ä¸º
 	 * {
-	 *	"title":"Node.jsÊµÕ½",
-	 *	"descript":"node.js in actionÖĞÎÄ°æ",
+	 *	"title":"Node.jså®æˆ˜",
+	 *	"descript":"node.js in actionä¸­æ–‡ç‰ˆ",
 	 *	"price":23,
 	 *	"shopURL":"http://product.china-pub.com/3769925"
 	 *}
@@ -67,11 +67,11 @@ class BookController  {
 
 
 	/*
-	 * ¶ÔÓ¦PUTÇëÇó
+	 * å¯¹åº”PUTè¯·æ±‚
 	 * http://localhost:8080/apis/book/5387d59f9475774da496ce09?format=json
-	 * Ìá½»jsonÊı¾İÎª
+	 * æäº¤jsonæ•°æ®ä¸º
 	 * {
-	 *       "price": 50.37 //ĞèÒªĞŞ¸ÄµÄÊôĞÔ
+	 *       "price": 50.37 //éœ€è¦ä¿®æ”¹çš„å±æ€§
 	 * }
 	 */
 	@Transactional
@@ -92,7 +92,7 @@ class BookController  {
 	}
 
 	/*
-	 * ¶ÔÓ¦DELETEÇëÇó
+	 * å¯¹åº”DELETEè¯·æ±‚
 	 * http://localhost:8080/apis/book/5387da099475774da496ce0b/?format=json
 	 */
 	@Transactional
@@ -107,10 +107,10 @@ class BookController  {
 	}
 
 	/*
-	 * ¶ÔÓ¦POSTÇëÇó
+	 * å¯¹åº”POSTè¯·æ±‚
 	 * http://localhost:8080/apis/book/findByTitle?format=json
-	 * Ê¹ÓÃrequest.JSON»ñÈ¡Ìá½»µÄjsonÊı¾İ
-	 * Ìá½»jsonÊı¾İÎª
+	 * ä½¿ç”¨request.JSONè·å–æäº¤çš„jsonæ•°æ®
+	 * æäº¤jsonæ•°æ®ä¸º
 	 * {
 	 * 	"title":"Node"
 	 * }
